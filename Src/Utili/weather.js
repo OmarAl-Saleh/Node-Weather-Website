@@ -25,7 +25,9 @@ const weather = (lat, long, callback) => {
             body.current.temperature +
             " degrees out. It feels like  " +
             body.current.feelslike +
-            " degree out.",
+            " degree out. The humidity is " +
+            body.current.humidity +
+            "%",
         });
     }
   );
