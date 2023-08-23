@@ -13,7 +13,7 @@ const Weather = require("./Utili/weather.js");
 
 // Define paths for Express config to can js file know them
 const viewPath = path.join(__dirname, "../tamplates/views"); // it can be optional here to indicate our views file if we want to put it in another place
-const publicDirectoryPath = path.join(__dirname, "../public/html");
+//const publicDirectoryPath = path.join(__dirname, "../public/html");
 const publicPath = path.join(__dirname, "../Public"); // to use css and Js files
 const partialPath = path.join(__dirname, "../tamplates/partial");
 
@@ -23,7 +23,7 @@ app.set("views", viewPath); // it can be optional because we define the views di
 hbs.registerPartials(partialPath);
 
 //Setup static directory to serve
-app.use(express.static(publicDirectoryPath));
+//app.use(express.static(publicDirectoryPath));
 app.use(express.static(publicPath));
 //
 app.get("", (req, res) => {
