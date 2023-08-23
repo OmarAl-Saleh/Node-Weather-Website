@@ -11,7 +11,8 @@ weatherForm.addEventListener("submit", (e) => {
   e.preventDefault(); // to stop the auto refresh when you click on button
   messageOne.textContent = "Loading..."; // to indicate that the server is response to button
   const location = search.value;
-  fetch("http://localhost:3000/weather?address=" + location).then(
+  fetch("/weather?address=" + location).then(
+    // we short the entire url because we need to deploy it globally
     (response) => {
       // here we wait for json data that's for we use then
       response.json().then((data) => {

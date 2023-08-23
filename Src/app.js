@@ -2,7 +2,8 @@ const path = require("path"); // core module
 const express = require("express"); // npm module
 const app = express();
 const hbs = require("hbs");
-const port = 3000;
+//const port = 3000; for local use
+port = process.env.PORT || 3000;
 const request = require("request");
 const geocode = require("./Utili/geocode.js");
 const Weather = require("./Utili/weather.js");
@@ -129,7 +130,12 @@ app.get("*", (req, res) => {
     name: "omar",
   });
 });
+//local server on port : 3000
+// app.listen(port, () => {
+//   // to start the server
+//   console.log("the server is running on port " + port);
+// });
+// global cyclic server and make or with port which is the local port 3000
 app.listen(port, () => {
-  // to start the server
-  console.log("the server is running on port " + port);
+  console.log("the server is running  on port" + port);
 });
